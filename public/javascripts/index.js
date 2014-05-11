@@ -71,8 +71,8 @@ function load(){
     li = $(tmpl);
     // TODO: 修改此處，讀取「已完成」與否，來決定是否要加上 `is-done`。
     li.appendTo(mainUl).find('span').text(arr[i].text);
-  if(arr[i].isDone){
-    li.addClass('is-done');
+    if(arr[i].isDone){
+      li.addClass('is-done');
   }
 }
 
