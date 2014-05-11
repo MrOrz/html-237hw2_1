@@ -49,7 +49,7 @@ function save(){
     // TODO: 修改此處，把「已完成」與否一併存入。
     arr.push($(this).find('span').text(),
     isDone: $(this).hasClass('is-done')
-
+  });
   });
 
   // 把陣列轉成 JSON 字串後存進 localStorage
@@ -100,7 +100,7 @@ deleteUl.on('sortreceive', function(e, ui){
 
 // [TODO] 回家作業
 doneUl.on('sortreceive',function(e, ui)){
-  ul.item.appendTo(mainUl).addclass('is-done')
+  ul.item.appendTo(mainUl).addClass('is-done');
 });
 
 }());
