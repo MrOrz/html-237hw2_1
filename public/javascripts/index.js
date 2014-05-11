@@ -2,6 +2,7 @@
 
 // 插入 <ul> 之 <li> 樣板
 var tmpl = '<li><input type="text"><span></span></li>',
+
     addButton = $('#add'),
     connected = $('.connected'),      // 三個 <ul>
     placeholder = $('#placeholder'),  // 三個 <ul> 的容器
@@ -94,6 +95,8 @@ deleteUl.on('sortreceive', function(e, ui){
 });
 
 // [TODO] 回家作業
-// 完成項目
+doneUl.on('sortreceive',function(e, ui)){
+  ul.item.appendTo(mainUl).addclass('is-done')
+});
 
 }());
