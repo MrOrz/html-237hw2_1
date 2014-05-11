@@ -47,10 +47,11 @@ function save(){
   // 把 <span> 裡的項目（一個物件：{text:文字, isDone:是否被完成}）放進陣列裡
   mainUl.find('li').each(function(){
     // TODO: 修改此處，把「已完成」與否一併存入。
-    arr.push($(this).find('span').text(),
+    arr.push({
+    text: $(this).find('span').text(),
     isDone: $(this).hasClass('is-done')
   });
-  });
+});
 
   // 把陣列轉成 JSON 字串後存進 localStorage
   localStorage.todoItems = JSON.stringify(arr);
