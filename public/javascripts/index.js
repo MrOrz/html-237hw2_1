@@ -101,7 +101,7 @@ deleteUl.on('sortreceive', function(e, ui){
 
 // [TODO] 回家作業
 doneUl.on('sortreceive',function(e, ui)){
-  ul.item.appendTo(mainUl).addClass('is-done');
+  ul.item.appendTo(mainUl).addClass('is-done')
 });
 
 }());
