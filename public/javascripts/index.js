@@ -2,7 +2,6 @@
 
 // 插入 <ul> 之 <li> 樣板
 var tmpl = '<li><input type="text"><span></span></li>',
-
     addButton = $('#add'),
     connected = $('.connected'),      // 三個 <ul>
     placeholder = $('#placeholder'),  // 三個 <ul> 的容器
@@ -47,11 +46,8 @@ function save(){
   // 把 <span> 裡的項目（一個物件：{text:文字, isDone:是否被完成}）放進陣列裡
   mainUl.find('li').each(function(){
     // TODO: 修改此處，把「已完成」與否一併存入。
-    arr.push({
-    text: $(this).find('span').text(),
-    isDone: $(this).hasClass('is-done')
+    arr.push($(this).find('span').text());
   });
-});
 
   // 把陣列轉成 JSON 字串後存進 localStorage
   localStorage.todoItems = JSON.stringify(arr);
@@ -70,9 +66,7 @@ function load(){
   for(i=0; i<arr.length; i+=1){
     li = $(tmpl);
     // TODO: 修改此處，讀取「已完成」與否，來決定是否要加上 `is-done`。
-    li.appendTo(mainUl).find('span').text(arr[i].text);
-    if(arr[i].isDone){
-      li.addClass('is-done');
+    li.appendTo(mainUl).find('span').text(arr[i]);
   }
 }
 
@@ -100,8 +94,9 @@ deleteUl.on('sortreceive', function(e, ui){
 });
 
 // [TODO] 回家作業
-doneUl.on('sortreceive',function(e, ui)){
-  ul.item.appendTo(mainUl).addClass('is-done')
+// 完成項目
+doneUl.on('sortreceive',function(e,ui){
+ ui.item.appendTo(mainUl).addClass('is-done');
 });
 
 }());
